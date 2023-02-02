@@ -26,7 +26,10 @@ public class Converter {
         return result.toString();
     }
 
-    public Integer calculate(Integer a, String operator, Integer b) {
+    public Integer calculate(Integer a, String operator, Integer b) throws CalculatorException {
+        if (a < b && operator.equals("-")) {
+            throw new CalculatorException("В римской системе нет отрицательных чисел и нуля");
+        }
         int sum = 0;
         switch (operator) {
             case "+":
