@@ -1,5 +1,5 @@
 public class Converter {
-    public Integer romanToInteger(String roman) {
+    public Integer romanToInteger(String roman) throws CalculatorException {
         String letters[] = {" ", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"};
         for (int i = 0; i < letters.length; i++) {
             if (letters[i].equals(roman)) {
@@ -11,8 +11,8 @@ public class Converter {
 
     public String integerToRoman(Integer number) {
         StringBuffer result = new StringBuffer();
-        int[] uniqueNumber = new int[] {1, 4, 5, 9, 10, 40, 50};
-        String[] arrSymbol = new String[] {"I", "IV", "V", "IX", "X", "XL", "L", "C"};
+        int[] uniqueNumber = new int[]{1, 4, 5, 9, 10, 40, 50};
+        String[] arrSymbol = new String[]{"I", "IV", "V", "IX", "X", "XL", "L", "C"};
         int size = uniqueNumber.length - 1;
         while (number > 0) {
             int count = number / uniqueNumber[size];
@@ -48,4 +48,5 @@ public class Converter {
         }
         return sum;
     }
+
 }
