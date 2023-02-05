@@ -48,5 +48,17 @@ public class Converter {
         }
         return sum;
     }
+    public boolean checkNumber(String a) {
+        if (a == null || a.equals("")) {
+            return false;
+        }
+        try {
+            Integer.parseInt(a);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
+
+    }
 
 }
